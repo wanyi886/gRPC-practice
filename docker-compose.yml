@@ -1,0 +1,14 @@
+version: '3'
+services:
+  grpc-server:
+    build: .
+    ports:
+      - "50052:50052"
+  nodejs-app:
+    build: .
+    ports:
+      - "2100:2100"
+    depends_on:
+      - grpc-server
+
+
